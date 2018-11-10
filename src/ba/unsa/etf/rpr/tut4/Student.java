@@ -4,30 +4,31 @@ public class Student {
     private String imeStudenta;
     private String prezimeStudenta;
     private int brojIndeksa;
-    private Semestar semestar;
-    public Student(String ime, String prezime, int brojIndeksa, Semestar s){
+    private StudijStudenta semestar;
+    public Student(String ime, String prezime, int brojIndeksa, Studij s){
         imeStudenta = ime;
         prezimeStudenta = prezime;
         this.brojIndeksa = brojIndeksa;
         semestar = s;
     }
-    public Student(Student s){
 
+    public void ispisiStudenta(){
+        System.out.println(getImeStudenta()+" "+getPrezimeStudenta()+" "+getBrojIndeksa());
     }
 
-    public String ispisiStudenta(){
-        return "";
-    }
-
-    public String getImeStudenta() {
+    public void getImeStudenta() {
         return imeStudenta;
     }
 
-    public String getPrezimeStudenta() {
+    public void getPrezimeStudenta() {
         return prezimeStudenta;
     }
 
     public int getBrojIndeksa() {
         return brojIndeksa;
+    }
+
+    public StudijStudenta getSemestar() {
+        return semestar;
     }
 }
