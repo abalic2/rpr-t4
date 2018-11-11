@@ -4,14 +4,15 @@ package ba.unsa.etf.rpr.tut4;
 public class Predmet {
     private int ECTSBodoviPredmeta;
     private String imePredmeta;
-    private int brojStudenataNaPredmetu;
-    private Student[] spisakStudenata;
+    protected int brojStudenataNaPredmetu;
+    protected Student[] spisakStudenata;
     public Predmet(){}
-    public Predmet(String ime, int bodovi){
+    public Predmet(String ime, int bodovi, int brojStudenata, Student[] spisak){
         imePredmeta = ime;
         ECTSBodoviPredmeta = bodovi;
-        brojStudenataNaPredmetu = 0;
+        brojStudenataNaPredmetu = brojStudenata;
         spisakStudenata = new Student[100];
+        System.arraycopy(spisak,0,spisakStudenata,0,brojStudenata);
     }
     public void ispisiPredmet(){
         System.out.println(getImePredmeta());
@@ -21,13 +22,25 @@ public class Predmet {
         return imePredmeta;
     }
 
+    public int getECTSBodoviPredmeta() {
+        return ECTSBodoviPredmeta;
+    }
+
+    public int getBrojStudenataNaPredmetu() {
+        return brojStudenataNaPredmetu;
+    }
+
+    public Student[] getSpisakStudenata() {
+        return spisakStudenata;
+    }
+
+    public void dodajStudenta(Student s){
+        spisakStudenata[brojStudenataNaPredmetu++]=new Student(s.getImeStudenta(),s.getPrezimeStudenta(),s.getBrojIndeksa(),s.getSemestar());
+    }
+
     public void ispisiStudenteNaPredmetu(){
         for(int i=0;i<brojStudenataNaPredmetu;i++){
             spisakStudenata[i].ispisiStudenta();
         }
-    }
-
-    public void upisiStudenta(Student s){
-        spisakStudenata[brojStudenataNaPredmetu++]=new Student(s.getImeStudenta(),s.getPrezimeStudenta(),s.getBrojIndeksa());
     }
 }

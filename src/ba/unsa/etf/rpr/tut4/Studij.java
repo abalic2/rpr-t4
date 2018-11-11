@@ -12,11 +12,8 @@ public class Studij {
     }
 
     Studij(Predmet[] spisak, int brojPredmeta, int ECTSpredmeta, String ime){
-        spisakObaveznihPredmeta = new Predmet[10];
-        for(int i = 0 ; i < brojPredmeta ; i++ ){
-            spisakObaveznihPredmeta[i] = spisak[i];
-
-        }
+        spisakObaveznihPredmeta = new Predmet[100];
+        System.arraycopy(spisak,0,spisakObaveznihPredmeta,0,brojPredmeta);
         brojObaveznihPredmeta = brojPredmeta;
         ECTSBodoviObaveznih = ECTSpredmeta;
     }

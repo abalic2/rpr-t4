@@ -5,7 +5,7 @@ public class Student {
     private String prezimeStudenta;
     private int brojIndeksa;
     private StudijStudenta semestar;
-    public Student(String ime, String prezime, int brojIndeksa, Studij s){
+    public Student(String ime, String prezime, int brojIndeksa, StudijStudenta s){
         imeStudenta = ime;
         prezimeStudenta = prezime;
         this.brojIndeksa = brojIndeksa;
@@ -16,11 +16,13 @@ public class Student {
         System.out.println(getImeStudenta()+" "+getPrezimeStudenta()+" "+getBrojIndeksa());
     }
 
-    public void getImeStudenta() {
+
+
+    public String getImeStudenta() {
         return imeStudenta;
     }
 
-    public void getPrezimeStudenta() {
+    public String getPrezimeStudenta() {
         return prezimeStudenta;
     }
 
